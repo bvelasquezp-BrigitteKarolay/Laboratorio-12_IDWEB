@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio 12 – Funciones en JavaScript</title>
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background-color: #f6f0ff;
+      color: #2c0066;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(135deg, #b388eb, #9d71e8);
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      border-bottom: 4px solid #8b5cf6;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.9rem;
+    }
+
+    main {
+      max-width: 950px;
+      margin: 30px auto;
+      padding: 0 25px 60px;
+    }
+
+    section {
+      background: white;
+      border-left: 8px solid #9d71e8;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 10px rgba(157, 113, 232, 0.25);
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(157, 113, 232, 0.4);
+    }
+
+    h2 {
+      color: #7c3aed;
+      margin-bottom: 8px;
+    }
+
+    button {
+      background-color: #a78bfa;
+      border: none;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #7c3aed;
+    }
+
+    .resultado {
+      background: #ede9fe;
+      border: 1px solid #d8b4fe;
+      padding: 8px;
+      border-radius: 6px;
+      margin-top: 8px;
+      color: #4b0082;
+      font-weight: bold;
+      white-space: pre-line;
+      min-height: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      background: #ede9fe;
+      color: #4b0082;
+      border-top: 3px solid #b388eb;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Laboratorio 12 – Funciones en JavaScript</h1>
+    <p>Alumna: <strong>Brigitte Karolay Velasquez Puma</strong></p>
+    <p>Curso: Introducción al Desarrollo Web</p>
+  </header>
+
+  <main>
+
+    <section><h2>Ejercicio 3:</h2><p>Función <code>esPar(num)</code> que devuelva true si el número es par.</p><button onclick="ejecutarEjercicio3()">Ejecutar Ejercicio 3</button><div id="resultado3" class="resultado"></div></section>
+    <section><h2>Ejercicio 4:</h2><p>Función <code>areaRectangulo(base, altura)</code> que retorne el área.</p><button onclick="ejecutarEjercicio4()">Ejecutar Ejercicio 4</button><div id="resultado4" class="resultado"></div></section>
+    <section><h2>Ejercicio 5:</h2><p>Función <code>esMultiplo(a, b)</code> que indique si a es múltiplo de b.</p><button onclick="ejecutarEjercicio5()">Ejecutar Ejercicio 5</button><div id="resultado5" class="resultado"></div></section>
+    <section><h2>Ejercicio 6:</h2><p>Función <code>mayorDeTres(a, b, c)</code> que devuelva el mayor número.</p><button onclick="ejecutarEjercicio6()">Ejecutar Ejercicio 6</button><div id="resultado6" class="resultado"></div></section>
+    <section><h2>Ejercicio 7:</h2><p>Función expresada <code>promedio</code> que reciba 3 notas y retorne su promedio.</p><button onclick="ejecutarEjercicio7()">Ejecutar Ejercicio 7</button><div id="resultado7" class="resultado"></div></section>
+    <section><h2>Ejercicio 8:</h2><p>Función expresada <code>convertirAMayusculas</code> que reciba un texto y lo devuelva en mayúsculas.</p><button onclick="ejecutarEjercicio8()">Ejecutar Ejercicio 8</button><div id="resultado8" class="resultado"></div></section>
+    <section><h2>Ejercicio 9:</h2><p>Función expresada <code>calcularDescuento(precio, porcentaje)</code>.</p><button onclick="ejecutarEjercicio9()">Ejecutar Ejercicio 9</button><div id="resultado9" class="resultado"></div></section>
+    <section><h2>Ejercicio 10:</h2><p>Función flecha <code>saludo</code> que reciba un nombre y devuelva un mensaje.</p><button onclick="ejecutarEjercicio10()">Ejecutar Ejercicio 10</button><div id="resultado10" class="resultado"></div></section>
+    <section><h2>Ejercicio 11:</h2><p>Función flecha <code>esPositivo</code> que indique si un número es mayor a 0.</p><button onclick="ejecutarEjercicio11()">Ejecutar Ejercicio 11</button><div id="resultado11" class="resultado"></div></section>
+    <section><h2>Ejercicio 12:</h2><p>Función flecha <code>componerTransformaciones</code> que reciba dos funciones flecha de texto, y devuelva una nueva función flecha que aplique ambas en secuencia al texto ingresado. Para mayúsculas (convierte todo el parámetro en mayúsculas) y la otra <code>agregarSigno</code> (aumenta “!” al final del parámetro).</p><button onclick="ejecutarEjercicio12()">Ejecutar Ejercicio 12</button><div id="resultado12" class="resultado"></div></section>
+    <section><h2>Ejercicio 13:</h2><p>Función <code>procesarTexto</code> que tenga una función interna <code>limpiarEspacios</code> y otra <code>contarPalabras</code>.</p><button onclick="ejecutarEjercicio13()">Ejecutar Ejercicio 13</button><div id="resultado13" class="resultado"></div></section>
+    <section><h2>Ejercicio 14:</h2><p>Función <code>operacionesMatematicas()</code> que internamente defina <code>sumar</code>, <code>restar</code>, <code>multiplicar</code> y <code>dividir</code>, sólo usando closures y funciones flecha.</p><button onclick="ejecutarEjercicio14()">Ejecutar Ejercicio 14</button><div id="resultado14" class="resultado"></div></section>
+    <section><h2>Ejercicio 15:</h2><p>Función <code>crearContador()</code> que guarde un valor inicial y devuelva funciones para <code>incrementar()</code> y <code>resetear()</code>.</p><button onclick="ejecutarEjercicio15()">Ejecutar Ejercicio 15</button><div id="resultado15" class="resultado"></div></section>
+    <section><h2>Ejercicio 16:</h2><p>Función <code>acumulador(valorInicial)</code> que devuelva una función para sumar nuevos valores.</p><button onclick="ejecutarEjercicio16()">Ejecutar Ejercicio 16</button><div id="resultado16" class="resultado"></div></section>
+    <section><h2>Ejercicio 17:</h2><p>Función <code>saludo(nombre = "Amigo")</code> que devuelva un mensaje.</p><button onclick="ejecutarEjercicio17()">Ejecutar Ejercicio 17</button><div id="resultado17" class="resultado"></div></section>
+    <section><h2>Ejercicio 18:</h2><p>Función <code>media(...numeros)</code> que calcule el promedio usando el operador rest.</p><button onclick="ejecutarEjercicio18()">Ejecutar Ejercicio 18</button><div id="resultado18" class="resultado"></div></section>
+    <section><h2>Ejercicio 19:</h2><p>Crea <code>mostrarDatos(nombre, edad, ...hobbies)</code> que muestre todos los datos.</p><button onclick="ejecutarEjercicio19()">Ejecutar Ejercicio 19</button><div id="resultado19" class="resultado"></div></section>
+    <section><h2>Ejercicio 20:</h2><p>Función <code>ejecutarOperacion(fn, x, y)</code> donde <code>fn</code> sea una función aritmética.</p><button onclick="ejecutarEjercicio20()">Ejecutar Ejercicio 20</button><div id="resultado20" class="resultado"></div></section>
+    <section><h2>Ejercicio 21:</h2><p>Función <code>filtrarArreglo(arr, callback)</code> que devuelva los elementos que cumplan la condición del callback.</p><button onclick="ejecutarEjercicio21()">Ejecutar Ejercicio 21</button><div id="resultado21" class="resultado"></div></section>
+    <section><h2>Ejercicio 22:</h2><p>Simula una función <code>descargarArchivo(url, callback)</code> que muestre "Descargando..." y luego llame al callback para mostrar "Descarga completa de [url]".</p><button onclick="ejecutarEjercicio22()">Ejecutar Ejercicio 22</button><div id="resultado22" class="resultado"></div></section>
+    <section><h2>Ejercicio 23:</h2><p>Recursividad pura — Potencia sin ** ni Math.pow(). Crea una función recursiva <code>potencia(base, exponente)</code> que calcule base elevado a exponente solo con multiplicaciones y recursión.</p><button onclick="ejecutarEjercicio23()">Ejecutar Ejercicio 23</button><div id="resultado23" class="resultado"></div></section>
+    <section><h2>Ejercicio 24:</h2><p>Función <code>crearSecuencia(inicio, paso)</code> que devuelva otra función. Cada vez que se invoque, debe devolver el siguiente número de la secuencia aritmética.</p><button onclick="ejecutarEjercicio24()">Ejecutar Ejercicio 24</button><div id="resultado24" class="resultado"></div></section>
+
+  </main>
+
+  <footer>© 2025 Brigitte Karolay Velasquez Puma – Laboratorio 12</footer>
+
+  <!-- ARCHIVOS-->
+  <script src="js/ejercicio3.js"></script>
+  <script src="js/ejercicio4.js"></script>
+  <script src="js/ejercicio5.js"></script>
+  <script src="js/ejercicio6.js"></script>
+  <script src="js/ejercicio7.js"></script>
+  <script src="js/ejercicio8.js"></script>
+  <script src="js/ejercicio9.js"></script>
+  <script src="js/ejercicio10.js"></script>
+  <script src="js/ejercicio11.js"></script>
+  <script src="js/ejercicio12.js"></script>
+  <script src="js/ejercicio13.js"></script>
+  <script src="js/ejercicio14.js"></script>
+  <script src="js/ejercicio15.js"></script>
+  <script src="js/ejercicio16.js"></script>
+  <script src="js/ejercicio17.js"></script>
+  <script src="js/ejercicio18.js"></script>
+  <script src="js/ejercicio19.js"></script>
+  <script src="js/ejercicio20.js"></script>
+  <script src="js/ejercicio21.js"></script>
+  <script src="js/ejercicio22.js"></script>
+  <script src="js/ejercicio23.js"></script>
+  <script src="js/ejercicio24.js"></script>
+
+</body>
+</html>
